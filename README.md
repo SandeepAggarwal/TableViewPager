@@ -11,14 +11,14 @@ Slide through the table views with transition including scaling up and down of t
 ## Installation
 Just copy following files to your project:
 
-HorizontalScrollView.h
-HorizontalScrollView.m
-IndexedTableViewController.h
-IndexedTableViewController.m
-ScrollElement.h
-ScrollElement.m
-TableViewPagerViewController.h
-TableViewPagerViewController.m
+- HorizontalScrollView.h
+- HorizontalScrollView.m
+- IndexedTableViewController.h
+- IndexedTableViewController.m
+- ScrollElement.h
+- ScrollElement.m
+- TableViewPagerViewController.h
+- TableViewPagerViewController.m
 
 ## Usage
 
