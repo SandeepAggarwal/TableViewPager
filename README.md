@@ -5,7 +5,7 @@ The Table-View-Pager is for iOS which is somewhat similar to Android's view-page
 
 Slide through the table views with transition including scaling up and down of table-views!!
 
-![Table-View-Pager] (http://i.imgur.com/sCkySFS.gifv)
+<img src="http://s28.postimg.org/5drif73m5/vid.gif" alt="Table-View-Pager"  style="width:268;height:480">
 
 
 ## Installation
