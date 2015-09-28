@@ -76,26 +76,26 @@
 }
 
 #pragma mark -Table View data source
-//-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    
-//}
-//
-//-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-//{
-//    
-//}
-//
-//-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-//{
-//    
-//}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return nil;
+}
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 0;
+}
 
 #pragma mark -TableViewPagerViewControllerDelegate
-//-(void)loadDataForElementIndex:(NSInteger)index
-//{
-//    
-//}
+-(void)loadDataForElementIndex:(NSInteger)index
+{
+    
+}
 
 
 @end
