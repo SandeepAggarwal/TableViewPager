@@ -22,7 +22,7 @@ pod "TableViewPager", "~> 1.0"
 ## Usage
 
 ```objective-c
-import 'TableViewPagerViewController'
+#import <TableViewPager/TableViewPagerViewController.h>
 ```
 
 Initialize table views
