@@ -38,11 +38,11 @@
 
 /* Begin PBXFileReference section */
 		04C7283D1BB83668000FF75D /* TableViewPager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewPager.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		04C728411BB83668000FF75D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		04C728431BB83668000FF75D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		04C728441BB83668000FF75D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		04C728461BB83668000FF75D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		04C728471BB83668000FF75D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		04C728411BB83668000FF75D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ExampleApp/main.m; sourceTree = "<group>"; };
+		04C728431BB83668000FF75D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ExampleApp/AppDelegate.h; sourceTree = "<group>"; };
+		04C728441BB83668000FF75D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ExampleApp/AppDelegate.m; sourceTree = "<group>"; };
+		04C728461BB83668000FF75D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ExampleApp/ViewController.h; sourceTree = "<group>"; };
+		04C728471BB83668000FF75D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ExampleApp/ViewController.m; sourceTree = "<group>"; };
 		04C7284C1BB83668000FF75D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04C728511BB83668000FF75D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04C728561BB83668000FF75D /* TableViewPagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TableViewPagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,14 +51,14 @@
 		04C728611BB83668000FF75D /* TableViewPagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TableViewPagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04C728651BB83668000FF75D /* TableViewPagerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewPagerUITests.m; sourceTree = "<group>"; };
 		04C728671BB83668000FF75D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		04C728741BB83722000FF75D /* HorizontalScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HorizontalScrollView.h; path = TableViewPager/HorizontalScrollView.h; sourceTree = "<group>"; };
-		04C728751BB83722000FF75D /* HorizontalScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HorizontalScrollView.m; path = TableViewPager/HorizontalScrollView.m; sourceTree = "<group>"; };
-		04C728761BB83722000FF75D /* IndexedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndexedTableViewController.h; path = TableViewPager/IndexedTableViewController.h; sourceTree = "<group>"; };
-		04C728771BB83722000FF75D /* IndexedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndexedTableViewController.m; path = TableViewPager/IndexedTableViewController.m; sourceTree = "<group>"; };
-		04C728781BB83722000FF75D /* ScrollElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrollElement.h; path = TableViewPager/ScrollElement.h; sourceTree = "<group>"; };
-		04C728791BB83722000FF75D /* ScrollElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScrollElement.m; path = TableViewPager/ScrollElement.m; sourceTree = "<group>"; };
-		04C7287A1BB83722000FF75D /* TableViewPagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TableViewPagerViewController.h; path = TableViewPager/TableViewPagerViewController.h; sourceTree = "<group>"; };
-		04C7287B1BB83722000FF75D /* TableViewPagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TableViewPagerViewController.m; path = TableViewPager/TableViewPagerViewController.m; sourceTree = "<group>"; };
+		04C728741BB83722000FF75D /* HorizontalScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HorizontalScrollView.h; path = TableViewPager/TableViewPagerClasses/HorizontalScrollView.h; sourceTree = "<group>"; };
+		04C728751BB83722000FF75D /* HorizontalScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HorizontalScrollView.m; path = TableViewPager/TableViewPagerClasses/HorizontalScrollView.m; sourceTree = "<group>"; };
+		04C728761BB83722000FF75D /* IndexedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndexedTableViewController.h; path = TableViewPager/TableViewPagerClasses/IndexedTableViewController.h; sourceTree = "<group>"; };
+		04C728771BB83722000FF75D /* IndexedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndexedTableViewController.m; path = TableViewPager/TableViewPagerClasses/IndexedTableViewController.m; sourceTree = "<group>"; };
+		04C728781BB83722000FF75D /* ScrollElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrollElement.h; path = TableViewPager/TableViewPagerClasses/ScrollElement.h; sourceTree = "<group>"; };
+		04C728791BB83722000FF75D /* ScrollElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScrollElement.m; path = TableViewPager/TableViewPagerClasses/ScrollElement.m; sourceTree = "<group>"; };
+		04C7287A1BB83722000FF75D /* TableViewPagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TableViewPagerViewController.h; path = TableViewPager/TableViewPagerClasses/TableViewPagerViewController.h; sourceTree = "<group>"; };
+		04C7287B1BB83722000FF75D /* TableViewPagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TableViewPagerViewController.m; path = TableViewPager/TableViewPagerClasses/TableViewPagerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,8 +89,8 @@
 		04C728341BB83668000FF75D = {
 			isa = PBXGroup;
 			children = (
-				04C728731BB83711000FF75D /* Classes */,
-				04C7283F1BB83668000FF75D /* TableViewPager */,
+				04C728731BB83711000FF75D /* TableViewPagerClasses */,
+				04C7283F1BB83668000FF75D /* ExampleApp */,
 				04C728591BB83668000FF75D /* TableViewPagerTests */,
 				04C728641BB83668000FF75D /* TableViewPagerUITests */,
 				04C7283E1BB83668000FF75D /* Products */,
@@ -107,26 +107,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		04C7283F1BB83668000FF75D /* TableViewPager */ = {
+		04C7283F1BB83668000FF75D /* ExampleApp */ = {
 			isa = PBXGroup;
 			children = (
 				04C728431BB83668000FF75D /* AppDelegate.h */,
 				04C728441BB83668000FF75D /* AppDelegate.m */,
 				04C728461BB83668000FF75D /* ViewController.h */,
 				04C728471BB83668000FF75D /* ViewController.m */,
+				04C728411BB83668000FF75D /* main.m */,
 				04C7284C1BB83668000FF75D /* Assets.xcassets */,
 				04C728511BB83668000FF75D /* Info.plist */,
-				04C728401BB83668000FF75D /* Supporting Files */,
 			);
+			name = ExampleApp;
 			path = TableViewPager;
-			sourceTree = "<group>";
-		};
-		04C728401BB83668000FF75D /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				04C728411BB83668000FF75D /* main.m */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		04C728591BB83668000FF75D /* TableViewPagerTests */ = {
@@ -147,7 +140,7 @@
 			path = TableViewPagerUITests;
 			sourceTree = "<group>";
 		};
-		04C728731BB83711000FF75D /* Classes */ = {
+		04C728731BB83711000FF75D /* TableViewPagerClasses */ = {
 			isa = PBXGroup;
 			children = (
 				04C728741BB83722000FF75D /* HorizontalScrollView.h */,
@@ -159,7 +152,7 @@
 				04C7287A1BB83722000FF75D /* TableViewPagerViewController.h */,
 				04C7287B1BB83722000FF75D /* TableViewPagerViewController.m */,
 			);
-			name = Classes;
+			name = TableViewPagerClasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -501,6 +494,7 @@
 				04C7286C1BB83668000FF75D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		04C7286D1BB83668000FF75D /* Build configuration list for PBXNativeTarget "TableViewPagerTests" */ = {
 			isa = XCConfigurationList;
@@ -509,6 +503,7 @@
 				04C7286F1BB83668000FF75D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		04C728701BB83668000FF75D /* Build configuration list for PBXNativeTarget "TableViewPagerUITests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +512,7 @@
 				04C728721BB83668000FF75D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
