@@ -1,32 +1,33 @@
-# Table-View-Pager
-===========
+====================
+# Table View Pager for iOS
+====================
 
-The Table-View-Pager is for iOS which is somewhat similar to Android's view-pager.
+A simple 'Table View Pager' for iOS which is inspired by Android's view pager. It is useful for applications having requirement of multiple table views which requires switching with the help of different tabs in one ViewController.
 
-Slide through the table views with transition including scaling up and down of table-views!!
+Slide through the table views with beautiful transitions!!
 
 <img src="http://s28.postimg.org/5drif73m5/vid.gif" alt="Table-View-Pager"  style="width:268;height:480">
 
 
-## Installation
-Just copy following files to your project:
+### Installation with CocoaPods
 
-- HorizontalScrollView.h
-- HorizontalScrollView.m
-- IndexedTableViewController.h
-- IndexedTableViewController.m
-- ScrollElement.h
-- ScrollElement.m
-- TableViewPagerViewController.h
-- TableViewPagerViewController.m
+#### Podfile
+
+```ruby
+platform :ios, '7.0'
+pod "TableViewPager", "~> 1.0"
+```
+
 
 ## Usage
 
+```objective-c
 import 'TableViewPagerViewController'
+```
 
 Initialize table views
 
-```
+```objective-c
 UITableView* v1=[[UITableView alloc] init];
 UITableView* v2=[[UITableView alloc] init];
 UITableView* v3=[[UITableView alloc] init];
@@ -37,7 +38,7 @@ UITableView* v5=[[UITableView alloc] init];
 
 Initialize TableViewPagerViewController
 
-```
+```objective-c
 TableViewPagerViewController *container = [[TableViewPagerViewController alloc] initWithElementsName:@[@"ONE",@"TWO",@"THREE",@"FOUR",@"FIVE"] colors:@[ONE_TAB_COLOR,TWO_TAB_COLOR,THREE_TAB_COLOR,FOUR_TAB_COLOR,FIVE_TAB_COLOR] tableViews:@[v1,v2,v3,v4,v5]];
     [self addChildViewController:container];
     [self.view addSubview:container.view];
@@ -52,7 +53,7 @@ TableViewPagerViewController *container = [[TableViewPagerViewController alloc] 
  do something useful upon changing the tab
  
  
- ```
+ ```objective-c
  #pragma mark -TableViewPagerViewControllerDelegate
 -(void)loadDataForElementIndex:(NSInteger)index
 {
@@ -75,5 +76,9 @@ Supports both iPhone and iPad.
 [@sandeepCool77](https://twitter.com/sandeepCool77)
 
 [Sandeep Aggarwal](mailto:smartsandeep1129@gmail.com)
+
+## License
+
+TableViewPager is released under the MIT license. See LICENSE for details.
 
 
