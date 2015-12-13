@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Tableviewpager by SandeepAggarwal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Tableviewpager</h1>
+      <h2 class="project-tagline">A simple &#39;Table View Pager&#39; for iOS which is inspired by Android&#39;s view pager.</h2>
+      <a href="https://github.com/SandeepAggarwal/TableViewPager" class="btn">View on GitHub</a>
+      <a href="https://github.com/SandeepAggarwal/TableViewPager/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/SandeepAggarwal/TableViewPager/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1></h1>
+
+<h1>
+<a id="table-view-pager-for-ios" class="anchor" href="#table-view-pager-for-ios" aria-hidden="true"><span class="octicon octicon-link"></span></a>Table View Pager for iOS</h1>
+
+<h1></h1>
+
+<p>A simple 'Table View Pager' for iOS which is inspired by Android's view pager. It is useful for applications having requirement of multiple table views which requires switching with the help of different tabs in one ViewController.</p>
+
+<p>Slide through the table views with beautiful transitions!!</p>
+
+<p><img src="http://s28.postimg.org/5drif73m5/vid.gif" alt="Table-View-Pager"></p>
+
+<h3>
+<a id="installation-with-cocoapods" class="anchor" href="#installation-with-cocoapods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation with CocoaPods</h3>
+
+<h4>
+<a id="podfile" class="anchor" href="#podfile" aria-hidden="true"><span class="octicon octicon-link"></span></a>Podfile</h4>
+
+<div class="highlight highlight-source-ruby"><pre>platform <span class="pl-c1">:ios</span>, <span class="pl-s"><span class="pl-pds">'</span>7.0<span class="pl-pds">'</span></span>
+pod <span class="pl-s"><span class="pl-pds">"</span>TableViewPager<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>~&gt; 1.0<span class="pl-pds">"</span></span></pre></div>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<div class="highlight highlight-source-objc"><pre>#<span class="pl-k">import</span> <span class="pl-s"><span class="pl-pds">&lt;</span>TableViewPager/TableViewPagerViewController.h<span class="pl-pds">&gt;</span></span></pre></div>
+
+<p>Initialize table views</p>
+
+<div class="highlight highlight-source-objc"><pre>UITableView* v1=[[UITableView <span class="pl-c1">alloc</span>] <span class="pl-c1">init</span>];
+UITableView* v2=[[UITableView <span class="pl-c1">alloc</span>] <span class="pl-c1">init</span>];
+UITableView* v3=[[UITableView <span class="pl-c1">alloc</span>] <span class="pl-c1">init</span>];
+UITableView* v4=[[UITableView <span class="pl-c1">alloc</span>] <span class="pl-c1">init</span>];
+UITableView* v5=[[UITableView <span class="pl-c1">alloc</span>] <span class="pl-c1">init</span>];
+</pre></div>
+
+<p>Initialize TableViewPagerViewController</p>
+
+<div class="highlight highlight-source-objc"><pre>TableViewPagerViewController *container = [[TableViewPagerViewController <span class="pl-c1">alloc</span>] <span class="pl-c1">initWithElementsName:</span>@[<span class="pl-s"><span class="pl-pds">@"</span>ONE<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">@"</span>TWO<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">@"</span>THREE<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">@"</span>FOUR<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">@"</span>FIVE<span class="pl-pds">"</span></span>] <span class="pl-c1">colors:</span>@[ONE_TAB_COLOR,TWO_TAB_COLOR,THREE_TAB_COLOR,FOUR_TAB_COLOR,FIVE_TAB_COLOR] <span class="pl-c1">tableViews:</span>@[v1,v2,v3,v4,v5]];
+    [<span class="pl-v">self</span> <span class="pl-c1">addChildViewController:</span>container];
+    [<span class="pl-v">self</span>.view <span class="pl-c1">addSubview:</span>container.view];
+    [container <span class="pl-c1">didMoveToParentViewController:</span><span class="pl-v">self</span>];
+    container.delegate=self;</pre></div>
+
+<h3>
+<a id="methods" class="anchor" href="#methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Methods</h3>
+
+<p>TableViewPagerViewController will alert your delegate object via <code>- loadDataForElementIndex:</code> method, so that you can
+ do something useful upon changing the tab</p>
+
+<div class="highlight highlight-source-objc"><pre> #<span class="pl-k">pragma mark</span> -TableViewPagerViewControllerDelegate
+-(<span class="pl-k">void</span>)loadDataForElementIndex:(<span class="pl-k">NSInteger</span>)index
+{
+    <span class="pl-c">/*</span>
+<span class="pl-c">    index=0, for first tab</span>
+<span class="pl-c">    index=1 , for second tab</span>
+<span class="pl-c"></span>
+<span class="pl-c">    and so on..</span>
+<span class="pl-c">    */</span>
+}</pre></div>
+
+<h2>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h2>
+
+<p>ViewPager supports minimum iOS 7 and uses ARC.</p>
+
+<p>Supports both iPhone and iPad.</p>
+
+<h2>
+<a id="contact" class="anchor" href="#contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contact</h2>
+
+<p><a href="https://twitter.com/sandeepCool77">@sandeepCool77</a></p>
+
+<p><a href="mailto:smartsandeep1129@gmail.com">Sandeep Aggarwal</a></p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>TableViewPager is released under the MIT license. See LICENSE for details.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/SandeepAggarwal/TableViewPager">Tableviewpager</a> is maintained by <a href="https://github.com/SandeepAggarwal">SandeepAggarwal</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
