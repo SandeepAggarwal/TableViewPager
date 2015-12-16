@@ -90,7 +90,7 @@
     
     
     UIView* lineView=[[UIView alloc] initWithFrame:CGRectMake(x, y, width, height)];
-    [lineView setBackgroundColor:[UIColor blueColor]];
+    [lineView setBackgroundColor:[UIColor colorWithRed:39/255.0f green:78/255.0f blue:121/255.0f alpha:1.0f]];
     [self addSubview:lineView];
     
     [self addTarget:self action:@selector(select) forControlEvents:UIControlEventTouchUpInside];

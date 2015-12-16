@@ -17,7 +17,7 @@
 @property NSArray* elementsName;
 @property NSArray* colors;
 @property UIView* coloredScroller;
-@property UIScrollView*  pageScrollView;
+
 
 @end
 
@@ -169,11 +169,14 @@
 
 #pragma mark -Helper methods
 
--(void)moveToViewController:(UIViewController*)controller direction: (UIPageViewControllerNavigationDirection)direction
+-(void)moveToViewController:(UIViewController*)controller direction: (UIPageViewControllerNavigationDirection)direction animated:(BOOL)animated
 {
     //called when tapped on scroll element or page controller view moves to its extreme ends
-    [self.pageController setViewControllers:@[controller] direction:direction animated:NO completion:nil];
-    [ self movetheScroller];
+    __weak  typeof(self)weakSelf=self;
+    [self.pageController setViewControllers:@[controller] direction:direction animated:animated completion:^(BOOL finished) {
+        [weakSelf movetheScroller];
+    }];
+   
 }
 
 -(void)movetheScroller
@@ -189,7 +192,7 @@
     CGFloat x=self.horizontalScrollView.width_element*index;
     CGRect frame=self.coloredScroller.frame;
     frame.origin.x=x;
-    [UIView transitionWithView:self.coloredScroller duration:0.1 options:(UIViewAnimationOptionAllowAnimatedContent) animations:^{
+    [UIView transitionWithView:self.coloredScroller duration:0.2 options:(UIViewAnimationOptionAllowAnimatedContent) animations:^{
         self.coloredScroller.frame=frame;
     } completion:nil];
     
@@ -204,55 +207,74 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    IndexedTableViewController* vc=[self.pageController.viewControllers firstObject];
-    IndexedTableViewController* next=(IndexedTableViewController*)[self pageViewController:self.pageController viewControllerAfterViewController:vc ];
-    IndexedTableViewController* previous=(IndexedTableViewController*)[self pageViewController:self.pageController viewControllerBeforeViewController:vc ];
-    
-    CGFloat position=[self positionOfView:vc.view superView:self.view];
-  
-    //scroll present controller
-    [self transformPage:vc.view position:position];
-    
-    //colored scroller
-    NSInteger index=vc.indexNumber;
-    CGFloat x=self.horizontalScrollView.width_element*(index- position);
-    CGRect frame=self.coloredScroller.frame;
-    frame.origin.x=x;
-    self.coloredScroller.frame=frame;
- 
-    if (next)
+    if ([[self getScrollView:self.pageController] isEqual:scrollView])
     {
-        //scroll next controller
-        [self transformPage:next.view position:position];
-       
-    }
-    if (previous)
-    {
-        //scroll previous controller
-        [self transformPage:previous.view position:position];
-    }
-
-    //when page controller view is at extreme ends
-    if (position<=-0.8 && tapped==NO)
-    {
+        IndexedTableViewController* vc=[self.pageController.viewControllers firstObject];
+        IndexedTableViewController* next=(IndexedTableViewController*)[self pageViewController:self.pageController viewControllerAfterViewController:vc ];
+        IndexedTableViewController* previous=(IndexedTableViewController*)[self pageViewController:self.pageController viewControllerBeforeViewController:vc ];
+        
+        CGFloat position=[self positionOfView:vc.view superView:self.view];
+        
+        //scroll present controller
+        [self transformPage:vc.view position:position];
+        
+        //colored scroller
+        NSInteger index=vc.indexNumber;
+        CGFloat x=self.horizontalScrollView.width_element*(index- position);
+        CGRect frame=self.coloredScroller.frame;
+        frame.origin.x=x;
+        self.coloredScroller.frame=frame;
+        
         if (next)
         {
-           [self moveToViewController:next direction:(UIPageViewControllerNavigationDirectionForward)];
+            //scroll next controller
+            [self transformPage:next.view position:position];
             
-            //kill scrolling so that more than 2 views can't be seen
-           // [self killScroll:scrollView];
         }
-    }
-    else if (position>=0.8 && tapped==NO)
-    {
         if (previous)
         {
-           [self moveToViewController:previous direction:(UIPageViewControllerNavigationDirectionReverse)];
-            
-            //kill scrolling so that more than 2 views can't be seen
-           // [self killScroll:scrollView];
+            //scroll previous controller
+             [self transformPage:previous.view position:position];
         }
+        
+        //when page controller view is at extreme ends
+        if (position<=-0.8 && tapped==NO)
+        {
+            if (next)
+            {
+                [self moveToViewController:next direction:(UIPageViewControllerNavigationDirectionForward)animated:NO];
+                
+                //kill scrolling so that more than 2 views can't be seen
+                // [self killScroll:scrollView];
+            }
+        }
+        else if (position>=0.8 && tapped==NO)
+        {
+            if (previous)
+            {
+                [self moveToViewController:previous direction:(UIPageViewControllerNavigationDirectionReverse) animated:NO];
+                
+                //kill scrolling so that more than 2 views can't be seen
+                // [self killScroll:scrollView];
+            }
+        }
+  
     }
+}
+
+
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+   IndexedTableViewController* vc=[self.pageController.viewControllers firstObject];
+    [UIView transitionWithView:vc.view duration:0.2 options:(UIViewAnimationOptionAllowUserInteraction) animations:^{
+        
+        CGFloat position=[self positionOfView:vc.view superView:self.view];
+        if (position!=0)
+        {
+            NSLog(@"done: %f",position);
+            [self moveToViewController:vc direction:(UIPageViewControllerNavigationDirectionForward) animated:NO];
+        }
+    } completion:nil];
     
 }
 

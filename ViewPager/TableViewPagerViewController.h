@@ -12,6 +12,8 @@
 @protocol TableViewPagerViewControllerDelegate <NSObject>
 
 -(void)loadDataForElementIndex:(NSInteger)index;
+
+@optional
 -(void)refreshDataForElementIndex:(NSInteger)index;
 
 @end
@@ -23,4 +25,5 @@
 @property (strong, nonatomic) UIPageViewController *pageController;
 -(instancetype)initWithElementsName:(NSArray*)elements colors:(NSArray*)colors tableViews:(NSArray*)tableViews;
 @property NSMutableArray* tableViewControllers;
+@property UIScrollView*  pageScrollView;
 @end
