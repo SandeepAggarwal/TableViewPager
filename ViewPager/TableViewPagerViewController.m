@@ -197,8 +197,10 @@
     } completion:nil];
     
     //set the color
-     UIColor *color=[self.colors objectAtIndex:index];
-    [self.coloredScroller setBackgroundColor:color];
+    UIColor *color=[self.colors objectAtIndex:index];
+    [UIView animateWithDuration:0.2 animations:^{
+        [self.coloredScroller.layer setBackgroundColor:color.CGColor];
+    }];
 }
 
 
@@ -218,12 +220,7 @@
         //scroll present controller
         [self transformPage:vc.view position:position];
         
-        //colored scroller
-        NSInteger index=vc.indexNumber;
-        CGFloat x=self.horizontalScrollView.width_element*(index- position);
-        CGRect frame=self.coloredScroller.frame;
-        frame.origin.x=x;
-        self.coloredScroller.frame=frame;
+        [self transformScrollerWithPosition:position forVC:vc];
         
         if (next)
         {
@@ -263,22 +260,6 @@
 }
 
 
--(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
-{
-   IndexedTableViewController* vc=[self.pageController.viewControllers firstObject];
-    [UIView transitionWithView:vc.view duration:0.2 options:(UIViewAnimationOptionAllowUserInteraction) animations:^{
-        
-        CGFloat position=[self positionOfView:vc.view superView:self.view];
-        if (position!=0)
-        {
-            NSLog(@"done: %f",position);
-            [self moveToViewController:vc direction:(UIPageViewControllerNavigationDirectionForward) animated:NO];
-        }
-    } completion:nil];
-    
-}
-
-
 
 #pragma mark -Google code
 
@@ -309,7 +290,15 @@
         CGFloat scaleFactor = fmaxf(min_scale, 1 - fabs(position));
         
         // Scale the page down (between MIN_SCALE and 1)
-        [view setTransform:CGAffineTransformMakeScale(scaleFactor, scaleFactor)];
+        CABasicAnimation* ba=[CABasicAnimation animationWithKeyPath:@"transform"];
+        ba.autoreverses=NO;
+        ba.duration=0;
+        ba.fillMode=kCAFillModeForwards;
+        ba.removedOnCompletion=NO;
+    
+        ba.toValue=[NSValue valueWithCATransform3D:(CATransform3DMakeAffineTransform(CGAffineTransformMakeScale(scaleFactor, scaleFactor)))];
+        
+        [view.layer addAnimation:ba forKey:nil];
         
         // Fade the page relative to its size.
         [view setAlpha:(min_alpha +
@@ -322,6 +311,41 @@
         // This page is way off-screen to the right.
        [view setAlpha:0 ];
     }
+}
+
+-(void)transformScrollerWithPosition:(CGFloat)position forVC:(IndexedTableViewController*)vc
+{
+    //colored scroller
+    NSInteger index=vc.indexNumber;
+    CGFloat x=self.horizontalScrollView.width_element*(index- position);
+    CGRect frame=self.coloredScroller.frame;
+    frame.origin.x=x;
+    self.coloredScroller.frame=frame;
+    
+    //set the color
+    UIColor *color=[self.colors objectAtIndex:index];
+    [UIView animateWithDuration:0.2 animations:^{
+        [self.coloredScroller.layer setBackgroundColor:color.CGColor];
+    }];
+    
+    if (position <= 1)
+    { // [-1,1]
+        
+        CGFloat scaleFactor = fmaxf(0.4, 1 - fabs(position));
+        
+        // Scale the page down (between MIN_SCALE and 1)
+        CABasicAnimation* ba=[CABasicAnimation animationWithKeyPath:@"transform"];
+        ba.autoreverses=NO;
+        ba.duration=0;
+        ba.fillMode=kCAFillModeForwards;
+        ba.removedOnCompletion=NO;
+        
+        ba.toValue=[NSValue valueWithCATransform3D:(CATransform3DMakeAffineTransform(CGAffineTransformMakeScale(1, scaleFactor)))];
+        NSLog(@"scaled factor: %f",scaleFactor);
+      
+        [self.coloredScroller.layer addAnimation:ba forKey:nil];
+    }
+  
 }
 
 
