@@ -341,7 +341,6 @@
         ba.removedOnCompletion=NO;
         
         ba.toValue=[NSValue valueWithCATransform3D:(CATransform3DMakeAffineTransform(CGAffineTransformMakeScale(1, scaleFactor)))];
-        NSLog(@"scaled factor: %f",scaleFactor);
       
         [self.coloredScroller.layer addAnimation:ba forKey:nil];
     }
