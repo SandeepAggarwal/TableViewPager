@@ -75,7 +75,7 @@
     self.elementLabel=elementLabel;
     
     //colorView
-    CGFloat padding=1.5f;
+    CGFloat padding=0.0f;
     UIView* elementColorView=[[UIView alloc] initWithFrame:CGRectMake(0, 3.7*height/4.0f, width-padding, 3.0f*sizeFactor)];
     
     self.elementColorView=elementColorView;
