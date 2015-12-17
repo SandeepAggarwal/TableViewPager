@@ -6,7 +6,7 @@ A simple 'Table View Pager' for iOS which is inspired by Android's view pager. I
 
 Slide through the table views with beautiful transitions!!
 
-<img src="http://s28.postimg.org/5drif73m5/vid.gif" alt="Table-View-Pager"  style="width:268;height:480">
+<img src="http://s15.postimg.org/kuyfnxyxn/ezgif_com_video_to_gif.gif" alt="Table-View-Pager"  style="width:268;height:480">
 
 
 ### Installation with CocoaPods
