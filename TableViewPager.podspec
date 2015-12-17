@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "TableViewPager"
-  s.version      = "1.0.0"
+  s.version      = "1.1.0"
   s.summary      = "A simple 'Table View Pager' for iOS which is inspired by Android's view pager."
 
   s.description  = <<-DESC
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.author             = { "Sandeep Aggarwal" => "smartsandeep1129@gmail.com" }
   s.social_media_url   = "https://twitter.com/sandeepCool77"
   s.platform     = :ios, "7.0"
-  s.source       = { :git => "https://github.com/SandeepAggarwal/TableViewPager.git", :tag => "1.0.0" }
+  s.source       = { :git => "https://github.com/SandeepAggarwal/TableViewPager.git", :tag => "1.1.0" }
   s.source_files  = "ViewPager"
 s.requires_arc = true
 end

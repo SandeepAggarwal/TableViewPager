@@ -15,7 +15,7 @@ Slide through the table views with beautiful transitions!!
 
 ```ruby
 platform :ios, '7.0'
-pod "TableViewPager", "~> 1.0"
+pod "TableViewPager", "~> 1.1"
 ```
 
 
