@@ -1,7 +1,7 @@
 # Table View Pager for iOS
 ====================
 
-[![Cocoapods Compatible](https://img.shields.io/cocoapods/v/TableViewPager.svg)](https://img.shields.io/cocoapods/v/TableViewPager.svg)
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/TableViewPager.svg)](https://img.shields.io/cocoapods/v/TableViewPager.svg)
 [![Platform](https://img.shields.io/cocoapods/p/TableViewPager.svg?style=flat)](http://cocoadocs.org/docsets/TableViewPager)
 
 A simple 'Table View Pager' for iOS which is inspired by Android's view pager. It is useful for applications having requirement of multiple table views which requires switching with the help of different tabs in one ViewController.
