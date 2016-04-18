@@ -1,7 +1,7 @@
 Table View Pager for iOS
 =========================
 
-[![Cocoapods Compatible](https://img.shields.io/cocoapods/v/TableViewPager.svg)](https://img.shields.io/cocoapods/v/TableViewPager.svg)
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/TableViewPager.svg)](https://img.shields.io/cocoapods/v/TableViewPager.svg)
 [![Platform](https://img.shields.io/cocoapods/p/TableViewPager.svg?style=flat)](http://cocoadocs.org/docsets/TableViewPager)
 [![License](http://img.shields.io/badge/license-MIT-blue.svg)](http://opensource.org/licenses/MIT)
 
