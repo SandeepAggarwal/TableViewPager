@@ -376,9 +376,9 @@
                  {
                      tapped=NO;
                      [weakSelf movetheScroller];
-                     if (self.delegate && [self.delegate respondsToSelector:@selector(loadDataForElementIndex:)])
+                     if (weakSelf.delegate && [self.delegate respondsToSelector:@selector(loadDataForElementIndex:)])
                      {
-                         [self.delegate loadDataForElementIndex:to];
+                         [weakSelf.delegate loadDataForElementIndex:to];
                      }
                  }
              }];
