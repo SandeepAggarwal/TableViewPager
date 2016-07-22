@@ -376,7 +376,7 @@
                  {
                      tapped=NO;
                      [weakSelf movetheScroller];
-                     if (weakSelf.delegate && [self.delegate respondsToSelector:@selector(loadDataForElementIndex:)])
+                     if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(loadDataForElementIndex:)])
                      {
                          [weakSelf.delegate loadDataForElementIndex:to];
                      }
