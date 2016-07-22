@@ -372,11 +372,18 @@
             __weak typeof (self) weakSelf=self;
             [self.pageController setViewControllers:@[vc] direction:direction animated:YES completion:^(BOOL finished)
              {
-                 tapped=NO;
-                 [weakSelf movetheScroller];
+                 if (finished)
+                 {
+                     tapped=NO;
+                     [weakSelf movetheScroller];
+                     if (self.delegate && [self.delegate respondsToSelector:@selector(loadDataForElementIndex:)])
+                     {
+                         [self.delegate loadDataForElementIndex:to];
+                     }
+                 }
              }];
         }
-        if (self.delegate && [self.delegate respondsToSelector:@selector(loadDataForElementIndex:)])
+        else if (self.delegate && [self.delegate respondsToSelector:@selector(loadDataForElementIndex:)])
         {
             [self.delegate loadDataForElementIndex:to];
         }
