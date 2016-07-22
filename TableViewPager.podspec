@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.author             = { "Sandeep Aggarwal" => "smartsandeep1129@gmail.com" }
   s.social_media_url   = "https://twitter.com/sandeepCool77"
   s.platform     = :ios, "7.0"
-  s.source       = { :git => "https://github.com/SandeepAggarwal/Table-View-Pager.git", :tag => {s.version} }
+  s.source       = { :git => "https://github.com/SandeepAggarwal/Table-View-Pager.git", :tag => '{s.version}' }
   s.source_files  = "ViewPager"
 s.requires_arc = true
 end
