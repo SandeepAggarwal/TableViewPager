@@ -14,7 +14,7 @@
 
 @interface HorizontalScrollView : UIScrollView
 
-@property id<HorizontalScrollViewDelegate>horizontalScrollViewDelegate;
+@property (nonatomic, weak) id<HorizontalScrollViewDelegate>horizontalScrollViewDelegate;
 @property(nonatomic) NSInteger selectedElementIndex;
 @property (nonatomic)  CGFloat width_element;
 -(ScrollElement*)addNewScrollElement:(NSString*)text color:(UIColor*)color;

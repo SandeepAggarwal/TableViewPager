@@ -20,7 +20,7 @@
 
 @interface TableViewPagerViewController : UIViewController
 
-@property id<TableViewPagerViewControllerDelegate> delegate;
+@property (nonatomic, weak) id<TableViewPagerViewControllerDelegate> delegate;
 @property HorizontalScrollView* horizontalScrollView;
 @property (strong, nonatomic) UIPageViewController *pageController;
 -(instancetype)initWithElementsName:(NSArray*)elements colors:(NSArray*)colors tableViews:(NSArray*)tableViews;
