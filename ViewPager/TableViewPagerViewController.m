@@ -78,6 +78,7 @@
     CGFloat width=self.view.bounds.size.width;
     CGFloat height=40.0f;
     self.horizontalScrollView=[[HorizontalScrollView alloc] initWithFrame:CGRectMake(x, y, width, height) num_elements:self.elementsName.count];
+    [self.horizontalScrollView setScrollsToTop:NO];
     for (int i=0; i<self.elementsName.count; i++)
     {
       [self.horizontalScrollView  addNewScrollElement:[self.elementsName objectAtIndex:i] color:[self.colors objectAtIndex:i]];
