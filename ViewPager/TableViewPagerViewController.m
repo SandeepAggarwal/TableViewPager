@@ -8,6 +8,7 @@
 #import "TableViewPagerViewController.h"
 #import "IndexedTableViewController.h"
 #import "ScrollElement.h"
+#import "CustomPageViewController.h"
 
 
 
@@ -93,7 +94,7 @@
     width=self.view.bounds.size.width;
     height=self.view.bounds.size.height-y;
     
-    self.pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:(UIPageViewControllerNavigationOrientationHorizontal) options:nil];
+    self.pageController = [[CustomPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:(UIPageViewControllerNavigationOrientationHorizontal) options:nil];
     self.pageController.dataSource = self;
     self.pageController.delegate=self;
     [[self.pageController view] setFrame:CGRectMake(x,y,width,height)];
